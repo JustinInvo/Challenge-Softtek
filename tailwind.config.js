@@ -25,7 +25,8 @@ export default {
       colors: {
         black: '#03050F',
         violet: '#CCD1EE',
-        violet2: '#5E6488'
+        violet2: '#5E6488',
+        violet3: '#4F4FFF',
       }
     },
   },

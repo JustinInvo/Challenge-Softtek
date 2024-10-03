@@ -1,9 +1,13 @@
-import React from 'react'
-import { IconLogoWhite } from '../icons'
+import React from 'react';
+import { IconLogoWhite } from '../icons';
+import { useLocation } from 'react-router-dom';
 
 export const Footer:React.FC = () => {
+  const location = useLocation();
+  
   return (
     <>
+    {location.pathname !== '/dashboard' && (
       <footer className='flex flex-col items-center bg-black px-4 py-8 mt-[80px]
         lg:flex-row lg:justify-center
       '>
@@ -22,6 +26,7 @@ export const Footer:React.FC = () => {
           </p>
         </div>
       </footer>
+      )}
     </>
   )
 }

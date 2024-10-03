@@ -2,6 +2,9 @@ import React from 'react'
 import { IconArrowBotton } from '../icons'
 import { Formik, Field, Form } from 'formik';
 import * as Yup from "yup";
+import { loginAuthApi } from '../services/api/login';
+import { useNavigate } from "react-router-dom";
+import { useDataUserStore } from '../store';
 
 interface Values {
   dni: string;
@@ -24,8 +27,11 @@ const SignupSchema = Yup.object().shape({
 });
 
 export const Login:React.FC = () => {
+  const { setDataUser } = useDataUserStore()
+  const navigate = useNavigate();
+
   return (
-    <div className='text-[1rem] max-w-[400px] mx-auto
+    <div className='text-[1rem] max-w-[400px] mx-auto px-4
       lg:flex lg:max-w-full lg:gap-[60px] lg:mt-[40px]
     '>
       <img className='hidden lg:block' loading='lazy' src="/img/login-family-d.webp" alt="Familia" />
@@ -58,7 +64,16 @@ export const Login:React.FC = () => {
             values: Values,
             { resetForm }
           ) => {
-            console.log('entro al button')
+            try{
+              const response = await loginAuthApi()
+              if(response) {
+                setDataUser(response)
+                navigate("/dashboard")
+                resetForm();
+              }
+            }catch(error){
+              console.log(error)
+            }
           }}
         >
           {({ errors, touched }) => (
@@ -86,7 +101,7 @@ export const Login:React.FC = () => {
               </div>
               <div className='mb-4'>
                 <div className='border-solid border-[1px] border-violet2 rounded-[10px] flex items-center h-[56px]'>
-                  <div className='flex flex-col px-3'>
+                  <div className='flex flex-col px-3 w-full'>
                     <label className='text-[.75em] text-violet' htmlFor="dni">Celular</label>
                     <Field 
                       id="phone"

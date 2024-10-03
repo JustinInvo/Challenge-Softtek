@@ -13,7 +13,7 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
       <div className='min-h-screen'>
         <div className='max-w-[1130px] mx-auto'>
         <Navbar/>
-          <div className='px-4'>
+          <div className=''>
             { children }
           </div>
         </div>
