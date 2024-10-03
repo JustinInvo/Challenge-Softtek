@@ -1,4 +1,5 @@
 import React from 'react';
+import { Navbar } from '../components';
 
 interface DefaultLayoutProps {
   children: React.ReactNode;
@@ -9,8 +10,11 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
 
   return(
     <>
-      <div className='flex items-center justify-center min-h-screen'>
-        { children }
+      <div className='min-h-screen'>
+        <Navbar/>
+        <div className='flex items-center justify-center'>
+          { children }
+        </div>
       </div>
     </>
   )
