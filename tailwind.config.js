@@ -22,6 +22,11 @@ export default {
         "3xl": "1440px",
         "4xl": "1600px",
       },
+      colors: {
+        black: '#03050F',
+        violet: '#CCD1EE',
+        violet2: '#5E6488'
+      }
     },
   },
   plugins: [],

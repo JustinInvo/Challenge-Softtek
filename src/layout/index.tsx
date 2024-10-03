@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar } from '../components';
+import { Navbar, Footer } from '../components';
 
 interface DefaultLayoutProps {
   children: React.ReactNode;
@@ -12,9 +12,10 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
     <>
       <div className='min-h-screen'>
         <Navbar/>
-        <div className='flex items-center justify-center'>
+        <div className='px-4'>
           { children }
         </div>
+        <Footer/>
       </div>
     </>
   )
