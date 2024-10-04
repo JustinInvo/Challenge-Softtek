@@ -22,11 +22,16 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
 
   useEffect(() => {
     awaitGetListPets()
+    debugger;
     if(birthDay){
       toggleBirthDayUser(birthDay)
       validPlanesAge()
     }
   }, [])
+
+  useEffect(() => {
+    validPlanesAge()
+  }, [plans])
 
   const awaitGetListPets = async() => {
     await getListPets()
