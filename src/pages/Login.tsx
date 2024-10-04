@@ -65,6 +65,7 @@ export const Login:React.FC = () => {
             { resetForm }
           ) => {
             try{
+              console.log('Datos:', values)
               const response = await loginAuthApi()
               if(response) {
                 setDataUser(response)
