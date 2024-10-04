@@ -33,6 +33,7 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
     if(plans && plans.length>0){
       validPlanesAge()
       setIsFinishValidPlanes(true)
+      debugger;
       if(plansFiltered){
         setPlansReduce(
           plansFiltered.map(plan => ({
