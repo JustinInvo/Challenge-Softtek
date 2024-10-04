@@ -3,10 +3,12 @@ import * as Progress from '@radix-ui/react-progress';
 import { BackStep } from './BackStep';
 
 interface Props {
-  step: number
+  step: number,
+  backLogin: () => void,
+  controlStep: (value:number) => void
 }
 
-export const StepProgress:React.FC<Props> = ({step}) => {
+export const StepProgress:React.FC<Props> = ({step, backLogin, controlStep}) => {
   const [progress, setProgress] = React.useState(4);
 
   useEffect(() => {
@@ -19,10 +21,10 @@ export const StepProgress:React.FC<Props> = ({step}) => {
 
   return (
     <>
-      <div className='text-[1rem] flex justify-center items-center py-6 border-solid border-b-[1px] border-violet px-4
+      <div className='text-[1rem] flex justify-center items-center py-6 border-solid border-b-[1px] border-violet px-4 transition
         lg:hidden
       '>
-        <BackStep/>
+        <BackStep backLogin={backLogin} controlStep={controlStep} step={step}/>
         <p className='text-[0.75em] font-bold mx-3 w-fit'>
           Paso {step} de 2
         </p>

@@ -31,7 +31,7 @@ export const ListPlans:React.FC = () => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: 1.2,
+      items: 1.1,
     }
   };
 
@@ -39,11 +39,13 @@ export const ListPlans:React.FC = () => {
     <>
       <div className='w-full'>
         {loading ?
-          <div>Cargando...</div>
+          <div className='flex justify-center'>
+            <img src="/img/loading-gif.gif" alt="Loading" />
+          </div>
           :
           <>
             {!plans ?
-            <div>No tienes mascotas registradas por el momento</div>
+            <div>No tienes planes registradas por el momento</div>
             :
             <>
               <Carousel 
@@ -54,7 +56,6 @@ export const ListPlans:React.FC = () => {
                 infinite={false} 
                 itemClass="px-2 py-6"
                 dotListClass="mb-[-4px]"
-                removeArrowOnDeviceType={["desktop", "desktopLarge"]}
                 renderArrowsWhenDisabled={true}
               >
               {
@@ -63,7 +64,6 @@ export const ListPlans:React.FC = () => {
                 ))
               }
               </Carousel>
-              asdasd:{currentSlide}
             </>
             }
           </>

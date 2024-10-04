@@ -79,3 +79,29 @@ body{
     }
   }
 }
+
+.react-multiple-carousel__arrow-{
+  &-left {
+    left: 0;
+  }
+  &-right {
+    right: 0;
+  }
+  &-right, &-left {
+    border: 1px solid #4F4FFF;
+    background-color: rgba($color: #fff, $alpha: .8) !important;
+    min-width: 32px;
+    min-height: 32px;
+    &::before{
+      color: #4F4FFF;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &:disabled{
+      border-color: #7981B2;
+      &::before{
+        color: #7981B2;
+      }
+    }
+  }
+}
