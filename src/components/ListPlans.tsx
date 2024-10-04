@@ -43,7 +43,7 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
         )
       }
     }
-  }, [plans])
+  }, [plansFiltered])
 
   useEffect(() => {
     if(isFinishValidPlanes){
