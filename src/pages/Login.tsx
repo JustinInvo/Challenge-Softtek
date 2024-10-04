@@ -90,7 +90,7 @@ export const Login:React.FC = () => {
                       id="dni"
                       name="dni"
                       placeholder='Ingrese su DNI' 
-                      className='outline-none'
+                      className='outline-none bg-transparent'
                       type="text"
                     />
                   </div>
@@ -107,7 +107,7 @@ export const Login:React.FC = () => {
                       id="phone"
                       name="phone"
                       placeholder='Ingrese su número' 
-                      className='outline-none'
+                      className='outline-none bg-transparent'
                       type="text"
                     />
                   </div>
