@@ -5,3 +5,4 @@ export * from './CardOption';
 export * from './BackStep';
 export * from './ListPlans';
 export * from './CardPlan';
+export * from './CardSummary';

@@ -2,16 +2,25 @@ import React from 'react'
 import { PLAN } from '../services/types'
 import { IconPlanHouse } from '../icons'
 
-export const CardPlan:React.FC<PLAN> = ({age, description, name, price}) => {
+interface Props {
+  data: PLAN,
+  nextSummary: (value:number, data:PLAN) => void;
+}
+
+export const CardPlan:React.FC<Props> = ({data, nextSummary}) => {
+
+
   return (
     <>
-      <div className='text-[1rem] w-[288px] rounded-xl min-h-1 px-8 py-10 relative shadow-[0_0_15px_0_rgba(204,209,238,1)] h-full flex flex-col justify-between bg-white'> 
+      <div className='text-[1rem] ease duration-200 w-[288px] rounded-xl min-h-1 cursor-pointer px-8 py-10 relative shadow-[0_0_15px_0_rgba(204,209,238,1)] h-full flex flex-col justify-between bg-white'
+        onClick={() => nextSummary(2, data)}
+      > 
         <div>
           <div className='flex justify-between gap-4'>
             <h3 className='text-[1.5em] font-bold leading-[1.2]
               lg:mb-6
             '>
-              {name}
+              {data.name}
             </h3>
             <IconPlanHouse/>
           </div>
@@ -21,11 +30,11 @@ export const CardPlan:React.FC<PLAN> = ({age, description, name, price}) => {
             '>
               Costo del plan
             </p>
-            <b className='text-[1.25em]'>${price} al mes</b>
+            <b className='text-[1.25em]'>${data.price} al mes</b>
           </div>
           
           <ul className='list-disc pl-4 flex flex-col gap-4'>
-            {description.map((item) => (
+            {data.description.map((item) => (
               <li className='text-balance'>{item}</li>
             ))}
           </ul>

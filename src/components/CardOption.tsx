@@ -13,7 +13,7 @@ interface Props {
 export const CardOption:React.FC<Props> = ({icon, title, description, value, selectecTypePlan, selectedOption}) => {
   return (
     <>
-      <div className={`text-[1rem] rounded-xl min-h-1 px-4 py-8 relative shadow-[0_0_15px_0_rgba(204,209,238,1)] cursor-pointer
+      <div className={`text-[1rem] ease duration-200 rounded-xl min-h-1 px-4 py-8 relative shadow-[0_0_15px_0_rgba(204,209,238,1)] cursor-pointer
         lg:max-w-[256px]
         ${selectedOption=== value ? 'outline outline-[3px] outline-offset-2' : ''}
       `}

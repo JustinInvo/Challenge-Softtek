@@ -21,9 +21,10 @@ export const StepProgress:React.FC<Props> = ({step, backLogin, controlStep}) => 
 
   return (
     <>
-      <div className='text-[1rem] flex justify-center items-center py-6 border-solid border-b-[1px] border-violet px-4 transition
+      <div className={`text-[1rem] flex justify-center items-center py-6 border-solid border-b-[1px] border-violet px-4 transition
         lg:hidden
-      '>
+        ${step === 2 && 'hidden'}
+      `}>
         <BackStep backLogin={backLogin} controlStep={controlStep} step={step}/>
         <p className='text-[0.75em] font-bold mx-3 w-fit'>
           Paso {step} de 2
