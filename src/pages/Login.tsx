@@ -81,7 +81,7 @@ export const Login:React.FC = () => {
             <Form>
               <div className='mb-4'>
                 <div className='border-solid border-[1px] border-violet2 rounded-[10px] flex items-center h-[56px]'>
-                  <p className='p-[.98em] w-[120px] border-solid border-r-[1px] border-violet2 flex items-center justify-between'>
+                  <p className='p-[.98em] w-full min-w-[80px] max-w-[120px] border-solid border-r-[1px] border-violet2 flex items-center justify-between'>
                     DNI
                     <IconArrowBotton/>
                   </p>
