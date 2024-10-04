@@ -27,6 +27,9 @@ export default {
         violet: '#CCD1EE',
         violet2: '#5E6488',
         violet3: '#4F4FFF',
+        violet4: '#EDEFFC',
+        green: '#389E0D',
+        red: '#FF1C44'
       }
     },
   },
