@@ -24,6 +24,7 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
     awaitGetListPets()
     if(birthDay){
       toggleBirthDayUser(birthDay)
+      validPlanesAge()
     }
   }, [])
 
@@ -35,7 +36,6 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
     // validamos por la edad - 1er paso
     // señalamos que ya se valido por la edad
     if(plans && plans.length>0){
-      validPlanesAge()
       setIsFinishValidPlanes(true)
       debugger;
       if(plansFiltered){
@@ -47,7 +47,7 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
         )
       }
     }
-  }, [plans])
+  }, [plansFiltered])
 
   useEffect(() => {
     if(isFinishValidPlanes){
@@ -82,6 +82,7 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
   const validPlanesAge = () => {
     if(plans && isElderly){
       const validPlans = plans.filter(plan => plan.age <= isElderly);
+      console.log('validPlans', validPlans)
       if(validPlans){
         setPlansFiltered(validPlans)
         setPlansReduce(validPlans)
