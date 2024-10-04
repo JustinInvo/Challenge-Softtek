@@ -34,8 +34,8 @@ export const CardPlan:React.FC<Props> = ({data, nextSummary}) => {
           </div>
           
           <ul className='list-disc pl-4 flex flex-col gap-4'>
-            {data.description.map((item) => (
-              <li className='text-balance'>{item}</li>
+            {data.description.map((item, key) => (
+              <li className='text-balance' key={key}>{item}</li>
             ))}
           </ul>
         </div>

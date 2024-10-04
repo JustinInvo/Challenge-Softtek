@@ -10,7 +10,9 @@ export const DefaultLayout: React.FC<DefaultLayoutProps> = (props) => {
 
   return(
     <>
-      <div className='min-h-screen flex flex-col justify-between relative overflow-hidden bg-login'>
+      <div className={`min-h-screen flex flex-col justify-between relative overflow-hidden
+          ${window.location.pathname === '/' ? 'bg-login' : 'bg-[#FAFBFF]'}
+        `}>
         <div className='max-w-[1130px] mx-auto'>
         <Navbar/>
           <div className=''>
