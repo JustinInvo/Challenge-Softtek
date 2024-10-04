@@ -22,7 +22,6 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
 
   useEffect(() => {
     awaitGetListPets()
-    debugger;
     if(birthDay){
       toggleBirthDayUser(birthDay)
       validPlanesAge()
@@ -42,7 +41,6 @@ export const ListPlans:React.FC<Props> = ({controlStep, setDataPlan, birthDay, s
     // señalamos que ya se valido por la edad
     if(plans && plans.length>0){
       setIsFinishValidPlanes(true)
-      debugger;
       if(plansFiltered){
         setPlansReduce(
           plansFiltered.map(plan => ({

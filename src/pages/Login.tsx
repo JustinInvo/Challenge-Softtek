@@ -34,7 +34,7 @@ export const Login:React.FC = () => {
     <div className='text-[1rem] max-w-[400px] mx-auto px-4
       lg:flex lg:max-w-full lg:gap-[60px] lg:mt-[40px]
     '>
-      <img className='hidden lg:block' loading='lazy' src="/img/login-family-d.webp" alt="Familia" />
+      <img className='hidden lg:block aspect-auto' loading='lazy' src="/img/login-family-d.webp" alt="Familia" />
       <div className='lg:max-w-[400px]'>
         <div className='text-black flex items-center gap-4 pb-6 mb-6 border-sold border-b-[1px] border-[#CCD1EE]
           lg:pb-0 lg:mb-4 lg:border-b-0
@@ -46,7 +46,7 @@ export const Login:React.FC = () => {
                 <br className='hidden lg:block'/> familia
             </h1>
           </div>
-          <img className='lg:hidden' loading='lazy' src="/img/login-family-m.webp" alt="Familia" />
+          <img className='lg:hidden aspect-auto' loading='lazy' src="/img/login-family-m.webp" alt="Familia" />
         </div>
         <p className='text-[.875em] font-bold leading-[1.2em] text-balance mb-4 flex items-center justify-between pr-3'>
           Tú eliges cuánto pagar. Ingresa tus datos, cotiza y 
